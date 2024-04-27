@@ -1,4 +1,3 @@
-
 # Import necessary libraries for various functionalities
 import math  # Import the math module for mathematical operations
 import heapq  # Import the heapq module for implementing priority queue
@@ -8,7 +7,7 @@ import numpy as np  # Import the numpy library for numerical operations
 
 # Define a class for the roadmap graph
 class roadmapGraph:
-    def _init_(self):
+    def __init__(self):
         # Initialize an empty graph
         self.G = nx.Graph()
 
@@ -56,40 +55,37 @@ class roadmapGraph:
 
         # Define edges with weights
         edges_with_weights = [
-    ("SZR", "JBR", {"weight": 3, "id": "R1"}),
-    ("JBR", "AWl", {"weight": 3, "id": "R2"}),
-    ("AWl", "SZR", {"weight": 3, "id": "R3"}),
-    ("ER", "AKR", {"weight": 5, "id": "R4"}),
-    ("SZR", "DMW", {"weight": 1, "id": "R19"}), 
-    ("DMW", "AAR", {"weight": 3, "id": "R20"}),
-    ("AFS", "HS", {"weight": 8, "id": "R21"}),
-    ("MBRB", "HS", {"weight": 1, "id": "R22"}),
-    ("MBRB", "ER", {"weight": 1, "id": "R23"}),
-    ("USR", "AAR", {"weight": 2, "id": "R24"}),
-    ("ADS", "ARR", {"weight": 2, "id": "R25"}),
-    ("ABR", "AAR", {"weight": 5, "id": "R26"}),
-    ("ABR", "AQR", {"weight": 4, "id": "R27"}),
-    ("AFS", "AQR", {"weight": 2, "id": "R28"}),
-    ("AMR", "AQR", {"weight": 2, "id": "R29"}),
-    ("SZR", "AQR", {"weight": 6, "id": "R30"}),
-    ("AMR", "AAR", {"weight": 4, "id": "R31"}),
-    ("AMR", "AWl", {"weight": 2, "id": "R32"}),
-    ("DMW", "JBR", {"weight": 3, "id": "R33"}),
-    ("DMW", "AWl", {"weight": 3, "id": "R34"}),
-    ("AKR", "ARR", {"weight": 4, "id": "R35"}),
-    ("DMW", "ARR", {"weight": 4, "id": "R36"}),
-    ("AKR", "JBR", {"weight": 3, "id": "R37"}),
-    ("AKR", "SZR", {"weight": 4, "id": "R38"}),
-    ("AKR", "AFS", {"weight": 7, "id": "R39"}),
-    ("SMbZR", "DC", {"weight": 3, "id": "R40"}),
-    ("SMbZR", "AKR", {"weight": 4, "id": "R41"}),
-    ("SMbZR", "SZR", {"weight": 8, "id": "R42"}),
-    ("ASR", "DC", {"weight": 4, "id": "R43"}),
-    ("ASR", "ARR", {"weight": 5, "id": "R44"}),
-]
-            
-
-
+            ("SZR", "JBR", {"weight": 3, "id": "R1"}),
+            ("JBR", "AWl", {"weight": 3, "id": "R2"}),
+            ("AWl", "SZR", {"weight": 3, "id": "R3"}),
+            ("ER", "AKR", {"weight": 5, "id": "R4"}),
+            ("SZR", "DMW", {"weight": 1, "id": "R19"}), 
+            ("DMW", "AAR", {"weight": 3, "id": "R20"}),
+            ("AFS", "HS", {"weight": 8, "id": "R21"}),
+            ("MBRB", "HS", {"weight": 1, "id": "R22"}),
+            ("MBRB", "ER", {"weight": 1, "id": "R23"}),
+            ("USR", "AAR", {"weight": 2, "id": "R24"}),
+            ("ADS", "ARR", {"weight": 2, "id": "R25"}),
+            ("ABR", "AAR", {"weight": 5, "id": "R26"}),
+            ("ABR", "AQR", {"weight": 4, "id": "R27"}),
+            ("AFS", "AQR", {"weight": 2, "id": "R28"}),
+            ("AMR", "AQR", {"weight": 2, "id": "R29"}),
+            ("SZR", "AQR", {"weight": 6, "id": "R30"}),
+            ("AMR", "AAR", {"weight": 4, "id": "R31"}),
+            ("AMR", "AWl", {"weight": 2, "id": "R32"}),
+            ("DMW", "JBR", {"weight": 3, "id": "R33"}),
+            ("DMW", "AWl", {"weight": 3, "id": "R34"}),
+            ("AKR", "ARR", {"weight": 4, "id": "R35"}),
+            ("DMW", "ARR", {"weight": 4, "id": "R36"}),
+            ("AKR", "JBR", {"weight": 3, "id": "R37"}),
+            ("AKR", "SZR", {"weight": 4, "id": "R38"}),
+            ("AKR", "AFS", {"weight": 7, "id": "R39"}),
+            ("SMbZR", "DC", {"weight": 3, "id": "R40"}),
+            ("SMbZR", "AKR", {"weight": 4, "id": "R41"}),
+            ("SMbZR", "SZR", {"weight": 8, "id": "R42"}),
+            ("ASR", "DC", {"weight": 4, "id": "R43"}),
+            ("ASR", "ARR", {"weight": 5, "id": "R44"}),
+        ]
 
         # Add edges to the graph
         for start, end, edge_data in edges_with_weights:
@@ -210,7 +206,7 @@ class roadmapGraph:
 
         # Draw nodes using the positions and colors defined
         for level, nodes in levels.items():
-            nx.draw_networkx_nodes(self.G, pos, nodelist=nodes, node_size=700, node_color='lightblue', alpha=0.9)
+          nx.draw_networkx_nodes(self.G, pos, nodelist=nodes, node_size=700, node_color='lightblue', alpha=0.9)
 
         # Draw houses with a different color
         house_nodes = [node for node in self.G.nodes if "label" in self.G.nodes[node] and self.G.nodes[node]["label"] == "House"]
